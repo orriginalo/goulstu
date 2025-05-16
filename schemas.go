@@ -24,3 +24,13 @@ type Lesson struct {
 	Teacher      string `json:"teacher"`
 	Room         string `json:"room"`
 }
+
+type TeachersResponse struct {
+	Response []string `json:"response"`
+	Error    string   `json:"error"`
+}
+
+type GroupsResponse struct {
+	Response []string `json:"response"`
+	Error    string   `json:"error"`
+}
