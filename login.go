@@ -16,11 +16,15 @@ type Ulstu struct {
 }
 
 func New(userLogin, password string) *Ulstu {
-	jar := &cookiejar.Jar{}
+	jar, err := cookiejar.New(nil)
+	if err != nil {
+		panic(err)
+	}
+	client := &http.Client{Jar: jar}
 	ulstu := &Ulstu{
 		UserLogin: userLogin,
 		Password:  password,
-		client:    &http.Client{Jar: jar},
+		client:    client,
 		jar:       jar,
 	}
 	return ulstu
