@@ -23,11 +23,10 @@ func New(userLogin, password string) *Ulstu {
 		client:    &http.Client{Jar: jar},
 		jar:       jar,
 	}
-	login(ulstu)
 	return ulstu
 }
 
-func login(u *Ulstu) error {
+func (u *Ulstu) Login() error {
 	form := url.Values{}
 	form.Add("login", u.UserLogin)
 	form.Add("password", u.Password)
