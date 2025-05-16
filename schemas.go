@@ -1,4 +1,4 @@
-package ulstu
+package goulstu
 
 type TimetableResponse struct {
 	Response TimetableData `json:"response"`

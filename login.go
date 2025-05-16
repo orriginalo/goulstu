@@ -1,4 +1,4 @@
-package ulstu
+package goulstu
 
 import (
 	"fmt"
